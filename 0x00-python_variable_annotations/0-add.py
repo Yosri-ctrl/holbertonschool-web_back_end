@@ -3,4 +3,8 @@
 
 
 def add(a: float, b: float) -> float:
-	return a + b
+    """
+    Take two float variable a and b
+    and return the sum as float
+    """
+    return a + b
