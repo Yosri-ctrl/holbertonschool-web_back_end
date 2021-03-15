@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """4-define_var"""
-from typing import NewType
 
 
 a = 1
