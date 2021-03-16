@@ -6,9 +6,9 @@ import asyncio
 task_wait_random = __import__('3-tasks').task_wait_random
 
 
-async def task_wait_n(n: int, max_delay: int = 10) -> List[float]:
+async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """
-    Wait and Return random nbr between 0 and max_delay
+    Return a list of all delayes
     """
     array: List[float] = []
     delays: List[float] = []
