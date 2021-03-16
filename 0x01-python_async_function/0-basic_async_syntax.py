@@ -4,7 +4,7 @@ from random import uniform
 import asyncio
 
 
-async def wait_random(max_delay: int=10) -> float:
+async def wait_random(max_delay: int = 10) -> float:
     """
     Wait and Return random nbr between 0 and max_delay
     """
