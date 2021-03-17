@@ -8,7 +8,7 @@ import random
 from typing import List, Generator
 
 
-async def async_generator() -> Generator[None, None, None]:
+async def async_generator() -> Generator[float, None, None]:
 	"""
 	Generate a float between 0 and 10
 	And return it
