@@ -5,10 +5,10 @@ And generat a float between 0 and 10
 """
 import asyncio
 import random
-from typing import List
+from typing import List, Generator
 
 
-async def async_generator() -> List[float]:
+async def async_generator() -> Generator[None, None, None]:
 	"""
 	Generate a float between 0 and 10
 	And return it
