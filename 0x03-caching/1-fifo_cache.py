@@ -11,9 +11,14 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 class FIFOCache(BaseCaching):
     """
+    FIFO (first in first out) cache system
+    if the cache dict pass the limit 
+    delete the first element created
     """
     def put(self, key, item):
         """
+        Add to the cache_data
+        And delete the fist element if full
         """
         if key or item:
             self.cache_data[key] = item
@@ -24,5 +29,10 @@ class FIFOCache(BaseCaching):
                 
     def get(self, key):
         """
+        Return the value of key in cache_data
+        And None if key is none
         """
-        return self.cache_data.get(key)
+        if key:
+            return self.cache_data.get(key)
+        else:
+            return None
