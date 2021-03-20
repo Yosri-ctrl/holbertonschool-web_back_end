@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Creating a new class BasicCache 
+Creating a new class BasicCache
 Inhereted from BaseCaching
 """
 BaseCaching = __import__('base_caching').BaseCaching
@@ -18,6 +18,7 @@ class BasicCache(BaseCaching):
         """
         if key or item:
             self.cache_data[key] = item
+
     def get(self, key):
         """
         Return content of cache_data
