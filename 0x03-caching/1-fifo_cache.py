@@ -15,6 +15,12 @@ class FIFOCache(BaseCaching):
     if the cache dict pass the limit
     delete the first element created
     """
+    def __init__(self):
+        """
+        Initilizing the cache_data
+        """
+        super().__init__()
+
     def put(self, key, item):
         """
         Add to the cache_data
