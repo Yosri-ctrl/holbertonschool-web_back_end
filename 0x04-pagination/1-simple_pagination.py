@@ -32,11 +32,12 @@ class Server:
         find the correct indexes to paginate the dataset correctly
         and return the appropriate page of the dataset
         """
-        assert type(page) ==  int and page > 0
+        assert type(page) == int and page > 0
         assert type(page_size) == int and page_size > 0
         index = index_range(page, page_size)
         self.dataset()
         return self.__dataset[index[0]: index[1]]
+
 
 def index_range(page: int, page_size: int) -> Tuple:
     """
