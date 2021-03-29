@@ -6,6 +6,7 @@ from typing import List
 import re
 import logging
 import os
+import mysql.connector
 PII_FIELDS = ("name", "email", "phone", "ssn", "password")
 
 
@@ -46,6 +47,8 @@ def filter_datum(fields: List[str], redaction: str,
 
 def get_logger() -> logging.Logger:
     """
+    function that takes no arguments and
+    returns a logging.Logger object
     """
     logger = logging.getLogger("user_data")
     logger.setLevel(logging.INFO)
@@ -58,6 +61,8 @@ def get_logger() -> logging.Logger:
 
 def get_db() -> mysql.connector.connection.MySQLConnection:
     """
+    store the data as environment variable
+    on the application server.
     """
     host = os.environ.get('PERSONAL_DATA_DB_HOST', 'localhost'),
     database = os.environ.get('PERSONAL_DATA_DB_NAME', 'root'),
