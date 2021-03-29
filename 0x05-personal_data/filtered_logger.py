@@ -20,8 +20,13 @@ class RedactingFormatter(logging.Formatter):
         self.fields = fields
 
     def format(self, record: logging.LogRecord) -> str:
-         return filter_datum(self.fields, self.REDACTION,
+        """
+        filter values in incoming log records using filter_datum.
+        Values for fields in fields should be filtered
+        """
+        return filter_datum(self.fields, self.REDACTION,
                             super().format(record), self.SEPARATOR)
+
 
 def filter_datum(fields: List[str], redaction: str,
                  message: str, separator: str) -> str:
@@ -32,5 +37,6 @@ def filter_datum(fields: List[str], redaction: str,
     for field in fields:
         pas = re.search(field, message).span()
         a = re.search(separator, message[pas[1] + 1:]).span()
-        message = re.sub(message[pas[1] + 1: pas[1] + a[1]], redaction, message)
+        message = re.sub(message[pas[1] + 1: pas[1] + a[1]],
+                         redaction, message)
     return message
