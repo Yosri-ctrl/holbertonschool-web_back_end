@@ -8,4 +8,6 @@ from typing import List, TypeVar
 from auth import Auth
 
 class BasicAuth(Auth):
+    """Empty class right now
+    """
     pass
