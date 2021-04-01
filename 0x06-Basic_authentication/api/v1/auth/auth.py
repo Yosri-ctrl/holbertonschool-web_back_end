@@ -16,10 +16,9 @@ class Auth:
         """ Validate if path exist in excluded_paths
         and return bool
         """
-        """if path is not None and not path.endswith("/"):
-            path += "/""""
-        if path is None or excluded_paths is None or
-        path not in excluded_paths:
+        if path is not None and not path.endswith("/"):
+            path += "/"
+        if path is None or excluded_paths is None or path not in excluded_paths:
             return True
         return False
 
