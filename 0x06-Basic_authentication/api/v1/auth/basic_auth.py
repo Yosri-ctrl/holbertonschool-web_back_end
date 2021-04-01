@@ -37,3 +37,13 @@ class BasicAuth(Auth):
         except binascii.Error:
             return None
         return header.decode('utf-8')
+
+    def extract_user_credentials(self, header: str) -> (str, str):
+        """
+        """
+        if header is None or type(header) is not str:
+            return None, None
+        if ":" not in header:
+            return None, None
+        header = header.split(":")
+        return header[0], header[1]
