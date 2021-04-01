@@ -5,7 +5,7 @@ For the moment this class will be empty.
 """
 from flask import request
 from typing import List, TypeVar
-from auth import Auth
+from api.v1.auth.auth import Auth
 
 class BasicAuth(Auth):
     """Empty class right now
