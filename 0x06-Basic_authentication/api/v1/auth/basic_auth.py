@@ -25,15 +25,15 @@ class BasicAuth(Auth):
             return None
         return authorization_header[6:]
 
-    def decode_base64_authorization_header(self, base64_authorization_header: str) -> str:
+    def decode_base64_authorization_header(self, header: str) -> str:
         """
         """
-        if base64_authorization_header is None:
+        if header is None:
             return None
-        if type(base64_authorization_header) is not str:
+        if type(header) is not str:
             return None
         try:
-            base64_authorization_header = b64decode(base64_authorization_header)
+            header = b64decode(header)
         except binascii.Error:
             return None
-        return base64_authorization_header.decode('utf-8')
+        return header.decode('utf-8')
