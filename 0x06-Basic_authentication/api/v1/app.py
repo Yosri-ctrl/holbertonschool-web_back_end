@@ -21,20 +21,22 @@ if getenv('AUTH_TYPE') == 'basic_auth':
     from api.v1.auth.basic_auth import BasicAuth
     auth = BasicAuth()
 
+
 @app.before_request
 def before_request() -> None:
     """ validate all requests to secure the API
     """
     if auth is not None:
         exclude = ['/api/v1/status/',
-                         '/api/v1/unauthorized/',
-                         '/api/v1/forbidden/']
+                   '/api/v1/unauthorized/',
+                   '/api/v1/forbidden/']
         check = auth.require_auth(request.path, exclude)
         if check:
             if not auth.authorization_header(request):
                 abort(401)
             if not auth.current_user(request):
                 abort(403)
+
 
 @app.errorhandler(404)
 def not_found(error) -> str:
