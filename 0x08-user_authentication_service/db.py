@@ -40,3 +40,13 @@ class DB:
         self._session.add(u)
         self._session.commit()
         return u
+
+    def find_user_by(self, **kwargs) -> User:
+        """ find user by keywords in kwargs
+        """
+        user = self._session.query(User).filter_by(**kwargs)
+        if user is None:
+            raise NoResultFound
+        if kwargs is None:
+            raise InvalidRequestError
+        return user.one()
