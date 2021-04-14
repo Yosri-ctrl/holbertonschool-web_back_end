@@ -50,3 +50,13 @@ class DB:
         if kwargs is None:
             raise InvalidRequestError
         return user.one()
+
+    def update_user(self, user_id: int, **kwargs) -> None:
+        """Update the User database using the find_user_by
+        """
+        id = self.find_user_by(id=user_id)
+        for key, value in kwargs.items():
+            if not hasattr(id, key):
+                raise ValueError
+            setattr(id, key, value)
+        self._session.commit()
