@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
-"""DB module
+"""
+DB module
 """
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.exc import InvalidRequestError
+from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.orm.session import Session
 
 from user import Base, User
@@ -16,7 +19,7 @@ class DB:
     def __init__(self) -> None:
         """Initialize a new DB instance
         """
-        self._engine = create_engine("sqlite:///a.db", echo=True)
+        self._engine = create_engine("sqlite:///a.db")
         Base.metadata.drop_all(self._engine)
         Base.metadata.create_all(self._engine)
         self.__session = None
@@ -29,11 +32,10 @@ class DB:
             DBSession = sessionmaker(bind=self._engine)
             self.__session = DBSession()
         return self.__session
-
-    def add_user(self, email: str, password: str) -> User:
-        """add_user to the database
+    def add_user(self, email: str, hashed_password: str) -> User:
+        """ Add_user to User database
         """
-        u = User(email=email, hashed_password=password)
+        u = User(email=email, hashed_password=hashed_password)
         self._session.add(u)
-        self._session.commit()
+        self._session.commit()d
         return u
