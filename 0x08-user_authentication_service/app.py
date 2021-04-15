@@ -3,6 +3,7 @@
 """
 from flask import jsonify
 
+
 @app.route('/', methods=['GET'], strict_slashes=False)
 def basic():
     """Return a simple dict message
