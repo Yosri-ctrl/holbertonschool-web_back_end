@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """basic Flask app
 """
-from flask import jsonify
+from flask import jsonify, Flask
+app = Flask(__name__)
 
 
 @app.route('/', methods=['GET'], strict_slashes=False)
