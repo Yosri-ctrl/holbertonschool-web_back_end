@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """basic Flask app
 """
-
+from flask import jsonify
 
 @app.route('/', methods=['GET'], strict_slashes=False)
 def basic():
