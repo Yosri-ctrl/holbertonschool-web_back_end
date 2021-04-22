@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""
+"""task 1
 """
 from flask import Flask, render_template
 from flask_babel import Babel
@@ -8,7 +8,7 @@ babel = Babel(app)
 
 
 class Config():
-    """
+    """Config class
     """
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = 'en'
@@ -18,7 +18,7 @@ class Config():
 app.config.from_object(Config)
 @app.route('/')
 def hello_world():
-    """
+    """return page containig header
     """
     return render_template("1-index.html")
 
