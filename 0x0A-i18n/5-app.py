@@ -14,6 +14,7 @@ users = {
     4: {"name": "Teletubby", "locale": None, "timezone": "Europe/London"},
 }
 
+
 class Config():
     """config class
     """
@@ -39,6 +40,7 @@ def before_request():
     """set get_user as a global on g.user
     """
     g.user = get_user()
+
 
 @app.route('/')
 def hello_world():
