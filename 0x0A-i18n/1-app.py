@@ -16,6 +16,8 @@ class Config():
 
 
 app.config.from_object(Config)
+
+
 @app.route('/')
 def hello_world():
     """return page containig header
