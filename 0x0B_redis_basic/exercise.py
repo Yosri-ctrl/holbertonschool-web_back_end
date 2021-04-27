@@ -11,16 +11,19 @@ def count_calls(method: Callable) -> Callable:
     """
     """
     key = method.__qualname__
+
     @wraps(method)
     def wrapper(self, *args, **kwargs):
         self._redis.incr(key)
         return method(self, *args, **kwargs)
     return wrapper
 
+
 def call_history(method: Callable) -> Callable:
     """
     """
     key = method.__qualname__
+
     @wraps(method)
     def wrapper(self, *args):
         """
@@ -30,6 +33,7 @@ def call_history(method: Callable) -> Callable:
         self._redis.rpush("{}:outputs".format(key), str(output))
         return output
     return wrapper
+
 
 class Cache():
     """Cashe class
@@ -49,11 +53,12 @@ class Cache():
         self._redis.set(key, data)
         return key
 
-    def get(self, key: str, fn = None):
+    def get(self, key: str, fn=None):
         """convert the data back to the desired format
         """
         data = self._redis.get(key)
-        if fn: data = fn(data)
+        if fn:
+            data = fn(data)
         return data
 
     def get_str(self, data: bytes) -> str:
