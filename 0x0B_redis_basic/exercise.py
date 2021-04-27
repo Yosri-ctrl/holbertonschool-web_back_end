@@ -8,7 +8,7 @@ from functools import wraps
 
 
 def count_calls(method: Callable) -> Callable:
-    """
+    """Count how many times methods of the Cache class are called
     """
     key = method.__qualname__
 
