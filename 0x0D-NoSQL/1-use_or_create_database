@@ -1,2 +1,2 @@
 // use or create a new database
-use <my_db>;
+use my_db
