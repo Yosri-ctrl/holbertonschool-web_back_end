@@ -13,6 +13,6 @@ export default class Building {
   get sqft() { return this._sqft; }
 
   set sqft(sqft) {
-    if (typeof sqft === 'number' ) { this._sqft = sqft; }
+    if (typeof sqft === 'number') { this._sqft = sqft; }
   }
 }
