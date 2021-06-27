@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""1-concat"""
+"""concatinate two strings togther"""
 
 
 def concat(str1: str, str2: str) -> str:

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""element length"""
+"""return the element length"""
 from typing import Iterable, Sequence, List, Tuple
 
 

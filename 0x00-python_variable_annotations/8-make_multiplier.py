@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""8-make_mult"""
+"""returns a function that multiplies a float by nbr"""
 from typing import Callable
 
 

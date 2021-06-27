@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""6-sum_of_list"""
+"""return the sum of the list"""
 import typing
 
 

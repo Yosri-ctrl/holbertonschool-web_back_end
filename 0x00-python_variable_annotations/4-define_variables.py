@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""4-define_var"""
+"""define multiple variables"""
 
 
 a: int = 1

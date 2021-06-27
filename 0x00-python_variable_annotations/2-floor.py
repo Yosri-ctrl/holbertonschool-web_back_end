@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""2-floor"""
+"""return the closest int from the float inpeted"""
 import math as m
 
 

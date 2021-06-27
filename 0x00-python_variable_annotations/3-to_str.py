@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""3-to_str"""
+"""return str from the float taken"""
 
 
 def to_str(n: float) -> str:
